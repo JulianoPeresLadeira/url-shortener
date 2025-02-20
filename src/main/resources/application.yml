@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    username: admin
+    url: jdbc:postgresql://postgres:5432/url-shortener
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: url-shortener
+
+management:
+  endpoint:
+    health:
+      show-details: 'always'
+  endpoints:
+    web:
+      exposure:
+        include: '*'
